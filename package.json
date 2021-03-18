@@ -3,12 +3,13 @@
     "version": "5.0.0",
     "private": true,
     "scripts": {
-        "serve": "vue-cli-service serve",
+        "serve": "vue-cli-service serve --open",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
         "axios": "^0.21.1",
+        "babel-polyfill": "^6.26.0",
         "core-js": "~3.9.1",
         "element-plus": "~1.0.2-beta.33",
         "vue": "~3.0.7",
