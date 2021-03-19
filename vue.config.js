@@ -74,17 +74,42 @@ module.exports = {
 
     devServer: { // 开发服务器
         proxy: { //匹配规则
+            // '/api': {
+            //     //要访问的跨域的域名
+            //     // target: 'http://123.59.213.33:8083',
+            //     target: 'http://10.203.161.45:8087',     //开发联调
+            //     ws: true,
+            //     secure: false, // 使用的是http协议则设置为false，https协议则设置为true
+            //     changOrigin: true, //开启代理
+            //     pathRewrite: {
+            //         '^/api': ''
+            //     }
+            // },
             '/api': {
-                //要访问的跨域的域名
-                // target: 'http://123.59.213.33:8083',
-                target: 'http://10.203.161.45:8087',     //开发联调
-                ws: true,
-                secure: false, // 使用的是http协议则设置为false，https协议则设置为true
-                changOrigin: true, //开启代理
+                target: 'http://jsonplaceholder.typicode.com',
+                changeOrigin: true,
                 pathRewrite: {
-                    '^/api': ''
+                    '/api': ''
                 }
-            }
+            },
+            '/ms': {
+                target: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
+                changeOrigin: true
+            },
+            '/local': {
+                target: 'http://0.0.0.0:1997',
+                changeOrigin: true,
+                pathRewrite: {
+                    '/local': ''
+                }
+            },
+            '/detail': {
+                target: 'http://0.0.0.0:17310',
+                changeOrigin: true,
+                pathRewrite: {
+                    '/detail': ''
+                }
+            },
         }
     },
     pluginOptions: {

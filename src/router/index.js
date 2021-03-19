@@ -48,6 +48,14 @@ const routes = [
                 },
                 component: () => import(/* webpackChunkName: "Group" */"../views/permission/Group.vue")
             },
+            {
+                path: "/readme",
+                name: "Readme",
+                meta: {
+                    title: '自述'
+                },
+                component: () => import(/* webpackChunkName: "Group" */"../views/about/Readme.vue")
+            },
         ]
 
     },
